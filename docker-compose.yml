@@ -1,0 +1,16 @@
+version: "3"
+
+volumes:
+  vendor:
+
+services:
+  be:
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
+    volumes:
+      - ./src/be:/go/src/be
+      - vendor:/go/src/be/vendor
+    ports:
+      - 3001:3001
+    tty: true
