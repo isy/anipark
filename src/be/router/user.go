@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/isy/ownedia/controller"
+	"github.com/isy/ownedia/src/be/controller"
 )
 
 func userRouter(r *gin.RouterGroup) {

@@ -9,8 +9,8 @@ services:
       context: .
       dockerfile: docker/api/Dockerfile
     volumes:
-      - ./src/be:/go/src/be
-      - vendor:/go/src/be/vendor
+      - ./src/be:/go/src/github.com/isy/ownedia/
+      - vendor:/go/src/github.com/isy/ownedia/vendor
     ports:
       - 3001:3001
     tty: true
