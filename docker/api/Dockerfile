@@ -1,8 +1,8 @@
 FROM golang:1.10.2-alpine3.7
 
-COPY src/be/ /go/src/github.com/isy/ownedia/
+COPY src/be/ /go/src/github.com/isy/ownedia/src/be/
 
-WORKDIR /go/src/github.com/isy/ownedia/
+WORKDIR /go/src/github.com/isy/ownedia/src/be/
 
 RUN apk update \
   && apk add --no-cache git \

@@ -4,13 +4,25 @@ volumes:
   vendor:
 
 services:
+  db:
+    image: mysql:5.7.22
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "4306:3306"
+    volumes:
+      - ./docker/mysql/volumes:/var/lib/mysql
+
   be:
     build:
       context: .
       dockerfile: docker/api/Dockerfile
     volumes:
-      - ./src/be:/go/src/github.com/isy/ownedia/
-      - vendor:/go/src/github.com/isy/ownedia/vendor
+      - ./src/be:/go/src/github.com/isy/ownedia/src/be
+      - vendor:/go/src/github.com/isy/ownedia/src/be/vendor
     ports:
       - 3001:3001
     tty: true
+    depends_on:
+      - db
