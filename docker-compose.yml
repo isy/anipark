@@ -7,6 +7,7 @@ services:
   db:
     image: mysql:5.7.22
     environment:
+      MYSQL_DATABASE: ownedia
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: root
     ports:
