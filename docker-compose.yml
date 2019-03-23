@@ -7,7 +7,7 @@ services:
   db:
     image: mysql:5.7.22
     environment:
-      MYSQL_DATABASE: ownedia
+      MYSQL_DATABASE: anipark
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: root
     ports:
@@ -20,8 +20,8 @@ services:
       context: .
       dockerfile: docker/api/Dockerfile
     volumes:
-      - ./src/be:/go/src/github.com/isy/ownedia/src/be
-      - vendor:/go/src/github.com/isy/ownedia/src/be/vendor
+      - ./src/be:/go/src/github.com/isy/anipark/src/be
+      - vendor:/go/src/github.com/isy/anipark/src/be/vendor
     ports:
       - 3001:3001
     tty: true
