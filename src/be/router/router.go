@@ -7,9 +7,12 @@ import (
 func GetRouter() *gin.Engine {
 	r := gin.Default()
 
-	api := r.Group("/api")
+	api := r.Group("/api/v1")
 	users := api.Group("/users")
+	tweets := api.Group("/tweets")
+
 	userRouter(users)
+	tweetRouter(tweets)
 
 	return r
 }
