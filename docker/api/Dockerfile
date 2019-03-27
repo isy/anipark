@@ -1,8 +1,8 @@
 FROM golang:1.11.5-alpine3.8
 
-COPY src/be/ /go/src/github.com/isy/ownedia/src/be/
+COPY src/be/ /go/src/github.com/isy/anipark/src/be/
 
-WORKDIR /go/src/github.com/isy/ownedia/src/be/
+WORKDIR /go/src/github.com/isy/anipark/src/be/
 
 RUN apk update \
   && apk add --no-cache git gcc libc-dev \
