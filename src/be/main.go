@@ -1,6 +1,6 @@
 package main
 
-import "github.com/isy/ownedia/src/be/router"
+import "github.com/isy/ownedia/src/be/infra/router"
 
 func main() {
 	r := router.GetRouter()
