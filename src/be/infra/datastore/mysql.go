@@ -5,14 +5,19 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
-func Conn() *gorm.DB {
-	db, err := gorm.Open(GetDBConfig())
+var DB *gorm.DB
+
+func Conn() {
+	DB, err := gorm.Open(GetDBConfig())
 	if err != nil {
 		panic(err)
 	}
 
-	db.LogMode(true)
-	return db
+	DB.LogMode(true)
+}
+
+func Close() {
+	DB.Close()
 }
 
 func GetDBConfig() (string, string) {
